@@ -1,0 +1,41 @@
+@import '../../utilities/variables';
+
+header{
+    background-color: $primary-green;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+
+    a{
+        color: $white;
+        text-decoration: none;
+    }
+
+    #logo{
+        font-family: $rufina;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    nav{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    @media(min-width: 600px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem 5rem;
+
+        #logo{
+            justify-self: start;
+        }
+
+        nav{
+            align-self: center;
+            justify-self: end;
+        }
+    }
+}
