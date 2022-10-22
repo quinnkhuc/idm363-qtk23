@@ -11,8 +11,11 @@ export default function Admin() {
         <div id="form-container">
           {products.map((product) => (
             <Form
+              key={product.id}
+              id={product.id}
               name={product.name}
               price={product.price}
+              imgURL={product.imgURL}
             />
           ))}
         </div>
