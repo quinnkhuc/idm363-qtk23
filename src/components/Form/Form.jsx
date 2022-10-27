@@ -1,7 +1,7 @@
 import './Form.scss';
 import { useDispatch } from 'react-redux';
 import { update_product_name, update_product_price } from '../../features/product';
-import { update_cart_name, update_cart_price } from '../../features/cart';
+import { update_cart_item_name, update_cart_item_price } from '../../features/cart';
 import PropTypes from 'prop-types';
 
 function Form({id, name, price}){
@@ -10,13 +10,13 @@ function Form({id, name, price}){
     function updateName(e, id){
         const updated_name = e.target.value;
         dispatch(update_product_name({id, updated_name}));
-        dispatch(update_cart_name({id, updated_name}));
+        dispatch(update_cart_item_name({id, updated_name}));
     }
 
     function updatePrice(e, id){
         const updated_price = parseFloat(e.target.value);
         dispatch(update_product_price({id, updated_price}))
-        dispatch(update_cart_price({id, updated_price}))
+        dispatch(update_cart_item_price({id, updated_price}))
     }
 
     return(

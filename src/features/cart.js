@@ -7,7 +7,7 @@ export const cartSlice = createSlice({
       value: []
     },
     reducers: {
-      update_cart_name: (state, action) => {
+      update_cart_item_name: (state, action) => {
         const itemIndex = state.value.findIndex(item => item.id === action.payload.id)
 
         if(itemIndex >= 0){
@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
           }
         }
       },
-      update_cart_price: (state, action) => {
+      update_cart_item_price: (state, action) => {
         const itemIndex = state.value.findIndex(item => item.id === action.payload.id)
 
         if(itemIndex >= 0){
@@ -43,6 +43,6 @@ export const cartSlice = createSlice({
     },
 });
   
-export const { update_cart_name, update_cart_price, add_to_cart, remove_from_cart } = cartSlice.actions;
+export const { update_cart_item_name, update_cart_item_price, add_to_cart, remove_from_cart } = cartSlice.actions;
   
 export default cartSlice.reducer;

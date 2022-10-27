@@ -12,7 +12,7 @@ export default function Total(){
     }
 
     return(
-        <p>Total: {getTotal()}</p>
+        <p>Total: ${getTotal()}</p>
     )
 
 }
