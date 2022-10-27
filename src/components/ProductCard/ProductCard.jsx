@@ -7,12 +7,8 @@ function ProductCard(product){
     const cart = useSelector((state) => state.cart.value);
     const dispatch = useDispatch();
 
-    function updateCart(id, name, price){
-        let item = {
-            id: id,
-            name: name,
-            price: price
-        }
+    function updateCart(id){
+        let item = id;
         let state = [...cart];
         state.push(item);
         dispatch(update_cart(state));
@@ -23,7 +19,7 @@ function ProductCard(product){
             <img src={product.imgURL} alt={product.name + ' Image'}></img>
             <p className='name'>{product.name}</p>
             <p className='price'>${product.price}</p>
-            <button onClick={() => updateCart(product.id, product.name, product.price)}>Add to Cart</button>
+            <button onClick={() => updateCart(product.id)}>Add to Cart</button>
         </div>
     )
 }

@@ -1,12 +1,10 @@
 import './Form.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { update_product } from '../../features/product';
-import { update_cart } from '../../features/cart';
 import PropTypes from 'prop-types';
 
 function Form(product){
     const products = useSelector((state) => state.product.value);
-    const cart = useSelector((state) => state.cart.value);
 
     const dispatch = useDispatch();
 
@@ -24,18 +22,6 @@ function Form(product){
 
         dispatch(update_product(state))
         
-        //Update cart
-        for(let i = 0; i < cart.length; i++){
-            console.log(cart[i].id)
-            if(id === cart[i].id){
-                const cart_state = [...cart];
-                cart_state[i] = {
-                    ...cart_state[i],
-                    [e.target.name]: e.target.value
-                }
-                dispatch(update_cart(cart_state))
-            }
-        }
     }
 
 
