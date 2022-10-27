@@ -7,12 +7,12 @@ export const productSlice = createSlice({
       value: products,
     },
     reducers: {
-      update: (state, action) => {
+      update_product: (state, action) => {
         state.value = action.payload;
       },
     },
 });
   
-export const { update } = productSlice.actions;
+export const { update_product } = productSlice.actions;
   
 export default productSlice.reducer;

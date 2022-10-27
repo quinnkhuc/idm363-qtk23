@@ -2,12 +2,20 @@
 
 header{
     background-color: $primary-green;
-    margin-bottom: 2.5rem;
+    box-sizing: border-box;
     padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
 
     a{
         color: $white;
         text-decoration: none;
+    }
+
+    .active{
+        border-bottom: 2px solid $white;
+        padding-bottom: 0.2rem;
     }
 
     #logo{

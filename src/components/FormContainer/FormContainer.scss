@@ -1,0 +1,10 @@
+@import '../../utilities/variables';
+
+@media(min-width: $destop){
+    #form-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+}

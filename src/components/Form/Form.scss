@@ -1,11 +1,31 @@
 @import '../../utilities/variables';
 
+@media(max-width: $destop){
+    form{
+        width: 80vw;
+        margin: 0 auto 1rem;
+    }
+
+    input{
+        width: 70vw;
+    }
+}
+
+@media(min-width: $destop){
+    form{
+        width: 30vw;
+    }
+
+    input{
+        width: 25vw;
+    }
+}
+
 form{
     background-color: $primary-yellow;
     border: 2px solid $primary-green;
     border-radius: 10px;
     padding: 1rem 0;
-    width: 30rem;
 
     div{
         margin: 0 auto;
@@ -18,7 +38,6 @@ form{
             font-size: 1.2rem;
             height: 2rem;
             padding: 0.5rem;
-            width: 27rem;
         }
     }
 
