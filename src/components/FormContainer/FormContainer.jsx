@@ -14,7 +14,6 @@ export default function FormContainer(){
               id={product.id}
               name={product.name}
               price={product.price}
-              imgURL={product.imgURL}
             />
           ))}
         </div>

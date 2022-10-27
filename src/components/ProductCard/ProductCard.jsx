@@ -1,31 +1,32 @@
 import './ProductCard.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { update_cart } from '../../features/cart';
+import { useDispatch } from 'react-redux';
+import { add_to_cart } from '../../features/cart';
 import PropTypes from 'prop-types';
 
-function ProductCard(product){
-    const cart = useSelector((state) => state.cart.value);
+function ProductCard({id, name, price, imgURL}){
     const dispatch = useDispatch();
 
-    function updateCart(id){
-        let item = id;
-        let state = [...cart];
-        state.push(item);
-        dispatch(update_cart(state));
+    function addToCart(id, name, price){
+        dispatch(add_to_cart({
+            id, name, price
+        }));
     }
 
     return(
         <div className='product'>
-            <img src={product.imgURL} alt={product.name + ' Image'}></img>
-            <p className='name'>{product.name}</p>
-            <p className='price'>${product.price}</p>
-            <button onClick={() => updateCart(product.id)}>Add to Cart</button>
+            <img src={imgURL} alt={name + ' Image'}></img>
+            <p className='name'>{name}</p>
+            <p className='price'>${price}</p>
+            <button onClick={() => addToCart(id, name, price)}>Add to Cart</button>
         </div>
     )
 }
 
 ProductCard.propTypes = {
-    product: PropTypes.array
+    id: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    imgURL: PropTypes.string
 }
 
 

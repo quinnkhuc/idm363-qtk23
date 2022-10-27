@@ -1,48 +1,42 @@
 import './Form.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { update_product } from '../../features/product';
+import { useDispatch } from 'react-redux';
+import { update_product_name, update_product_price } from '../../features/product';
+import { update_cart_name, update_cart_price } from '../../features/cart';
 import PropTypes from 'prop-types';
 
-function Form(product){
-    const products = useSelector((state) => state.product.value);
-
+function Form({id, name, price}){
     const dispatch = useDispatch();
 
-    function handleInputChange(e, id){
-
-        //Update product
-        const index = products.findIndex(product => product.id === id);
-
-        const state = [...products];
-
-        state[index] = {
-            ...state[index],
-            [e.target.name]: e.target.value
-        }
-
-        dispatch(update_product(state))
-        
+    function updateName(e, id){
+        const updated_name = e.target.value;
+        dispatch(update_product_name({id, updated_name}));
+        dispatch(update_cart_name({id, updated_name}));
     }
 
+    function updatePrice(e, id){
+        const updated_price = parseFloat(e.target.value);
+        dispatch(update_product_price({id, updated_price}))
+        dispatch(update_cart_price({id, updated_price}))
+    }
 
     return(
         <form>
             <div className='name'>
                 <input 
                     name='name'
-                    onChange={e => handleInputChange(e, product.id)}
+                    onChange={e => updateName(e, id)}
                     placeholder='Product Name'
                     type='text'
-                    value={product.name}
+                    value={name}
                 />
             </div>
             <div className='price'>
                 <input 
                     name='price'
-                    onChange={e => handleInputChange(e, product.id)}
+                    onChange={e => updatePrice(e, id)}
                     placeholder='9.99'
                     type='number'
-                    value={product.price}
+                    value={price}
                 />
             </div>
         </form>
@@ -50,7 +44,9 @@ function Form(product){
 }
 
 Form.propTypes = {
-    product: PropTypes.array
+    id: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number
 }
 
 export default Form;

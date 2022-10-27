@@ -3,7 +3,15 @@ import './Header.scss';
 import { useSelector } from 'react-redux';
 
 export default function Header() {
-    const cart = useSelector((state) => state.cart.value).length;
+    const cart = useSelector((state) => state.cart.value);
+
+    function getCartQuantity(){
+        let total = 0;
+        cart.forEach(item => {
+            total += item.quantity;
+        })
+        return total;
+    }
 
     return (
         <header>
@@ -11,8 +19,7 @@ export default function Header() {
                 <Link to='/'>PARADISA</Link>
             </div>
             <nav>
-                <NavLink to='/cart' className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Cart 
-                {cart > 0 ? '('+cart+')' : '' }</NavLink>
+                <NavLink to='/cart' className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Cart ({getCartQuantity()})</NavLink>
                 <NavLink to='/admin' className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Admin</NavLink>
             </nav>
         </header>
