@@ -7,8 +7,9 @@ export default function Total(){
         let totalPrice = 0
         cart.forEach(item => {
           totalPrice += item.price * item.quantity
+          
         })
-        return totalPrice
+        return(Math.round(totalPrice * 100)/100)
     }
 
     return(
