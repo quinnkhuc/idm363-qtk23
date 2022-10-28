@@ -9,6 +9,8 @@ import { initialize_store } from './features/product';
 import Header from './components/Header/Header';
 import Catalog from './components/Catalog/Catalog';
 
+import './App.scss';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -30,7 +32,6 @@ function App() {
   useEffect(() => {
     dispatch(initialize_store(products))
   })
-
 
   return (
     <>

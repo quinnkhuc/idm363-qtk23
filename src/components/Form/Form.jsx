@@ -1,8 +1,9 @@
-import './Form.scss';
 import { useDispatch } from 'react-redux';
 import { update_product_name, update_product_price } from '../../features/product';
 import { update_cart_item_name, update_cart_item_price } from '../../features/cart';
 import PropTypes from 'prop-types';
+
+import './Form.scss';
 
 function Form({id, name, price}){
     const dispatch = useDispatch();

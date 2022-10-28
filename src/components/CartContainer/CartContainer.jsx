@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
-import './CartContainer.scss';
 import uuid from 'react-uuid';
 import Total from '../Total/Total';
 import CardItem from '../CartItem/CartItem';
+
+import './CartContainer.scss';
 
 export default function CartContainer(){
     const cart = useSelector((state) => state.cart.value);

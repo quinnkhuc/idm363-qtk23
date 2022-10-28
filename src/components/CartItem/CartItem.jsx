@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import './CartItem.scss'
 import { useDispatch} from 'react-redux';
 import { remove_from_cart } from '../../features/cart';
+
+import './CartItem.scss'
 
 export default function CardItem({id, name, price, quantity=0}){
     const dispatch = useDispatch();
