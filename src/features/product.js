@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { products } from '../data';
 
 export const productSlice = createSlice({
     name: 'product',
     initialState: {
-      value: products,
+      value: [],
     },
     reducers: {
+      initialize_store: (state, action) => {
+        state.value = action.payload
+      },
       update_product_name: (state, action) => {
         const itemIndex = state.value.findIndex((item) => item.id === action.payload.id)
 
@@ -26,6 +28,6 @@ export const productSlice = createSlice({
     }
 });
   
-export const { update_product_name, update_product_price } = productSlice.actions;
+export const { initialize_store, update_product_name, update_product_price } = productSlice.actions;
   
 export default productSlice.reducer;
