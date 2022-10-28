@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
-import './Header.scss';
 import { useSelector } from 'react-redux';
+
+import './Header.scss';
 
 export default function Header() {
     const cart = useSelector((state) => state.cart.value);

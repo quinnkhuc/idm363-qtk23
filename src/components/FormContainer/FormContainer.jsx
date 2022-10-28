@@ -1,7 +1,8 @@
 import Form from '../Form/Form'
 import { useSelector } from 'react-redux';
-import './FormContainer.scss';
 import uuid from 'react-uuid';
+
+import './FormContainer.scss';
 
 export default function FormContainer(){
     const products = useSelector((state) => state.product.value);

@@ -1,7 +1,8 @@
 import ProductCard from '../ProductCard/ProductCard';
 import { useSelector } from "react-redux";
-import './Catalog.scss';
 import uuid from 'react-uuid';
+
+import './Catalog.scss';
 
 export default function Catalog(){
     const products = useSelector((state) => state.product.value);

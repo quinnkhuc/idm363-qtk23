@@ -1,7 +1,8 @@
-import './ProductCard.scss';
 import { useDispatch } from 'react-redux';
 import { add_to_cart } from '../../features/cart';
 import PropTypes from 'prop-types';
+
+import './ProductCard.scss';
 
 function ProductCard({id, name, price, imgURL}){
     const dispatch = useDispatch();
