@@ -14,7 +14,7 @@ export default function FormContainer(){
               key={uuid()}
               id={product.id}
               name={product.name}
-              price={product.price}
+              price={parseFloat(product.price)}
             />
           ))}
         </div>

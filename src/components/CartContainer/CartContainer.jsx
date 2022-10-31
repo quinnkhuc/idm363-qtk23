@@ -16,7 +16,7 @@ export default function CartContainer(){
                     key={uuid()}
                     id={item.id}
                     name={item.name}
-                    price={item.price} 
+                    price={parseFloat(item.price)} 
                     quantity={item.quantity}
                 />
                 ))}

@@ -1,0 +1,11 @@
+@import '../../utilities/variables';
+
+#total{
+    margin: 0 auto;
+    text-align: center;
+
+    span{
+        font-family: $rufina;
+        font-weight: 700;
+    }
+}

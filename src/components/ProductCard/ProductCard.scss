@@ -4,24 +4,6 @@
     @media(max-width: $tablet){
         margin-bottom: 2rem;
     }
-    
-    button{
-        background-color: $tertiary-green;
-        border: none;
-        border-radius: 0.25rem;
-        color: $primary-green;
-        display: block;
-        font-family: $pt-serif;
-        font-size: 1.2rem;
-        margin: 0 auto;
-        padding: 0.5rem 1rem;
-
-        &:hover{
-            background-color: $primary-green;
-            color: $white;
-            cursor: pointer;
-        }
-    }
 
     img{
         display: block;

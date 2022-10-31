@@ -12,12 +12,16 @@ export default function CardItem({id, name, price, quantity=0}){
     }
 
     return(
-        <>
-            <p>{name}</p>
-            <p>{price}</p>
-            <p>{quantity}</p>
+        <div className='cart-item'>
+            <div className='item-details'>
+                <p> 
+                    <span className='name'>{name}</span>
+                    <span className='price'>${price}</span>
+                    <span className='quantity'>{quantity}</span>
+                </p>
+            </div>
             <button onClick={() => removeItem(id)}>Remove</button>
-        </>
+        </div>
     )
 }
 

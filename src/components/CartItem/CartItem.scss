@@ -1,0 +1,45 @@
+@import '../../utilities/variables';
+
+.cart-item{
+    background-color: $primary_yellow;
+    font-size: 1rem;
+    margin: 0 auto 1rem;
+    max-width: 400px;
+    padding: 1rem 0;
+
+    button{
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    p{
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "name name"
+            "price quantity" ;
+        line-height: 1.2rem;
+    }
+
+    .item-details{
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .name{
+        font-family: $rufina;
+        font-size: 1.2rem;
+        font-weight: 700;
+        grid-area: name;
+    }
+
+    .price{
+        grid-area: price;
+    }
+
+    .quantity{
+        grid-area: quantity;
+        text-align: right;
+    }
+}

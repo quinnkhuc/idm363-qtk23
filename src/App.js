@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
 
+import { Routes, Route } from "react-router-dom";
 import { collection, onSnapshot, query } from 'firebase/firestore'
 import { db } from './firestore'
 import { useDispatch } from 'react-redux';
 import { initialize_store } from './features/product';
 
-import Header from './components/Header/Header';
-import Catalog from './components/Catalog/Catalog';
+import Admin from './routes/admin';
+import Cart from './routes/cart';
+import Home from './routes/home';
+
 
 import './App.scss';
 
@@ -34,10 +37,13 @@ function App() {
   })
 
   return (
-    <>
-      <Header />
-      <Catalog />
-    </>
+    <div className='app'>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='admin' element={<Admin />}/>
+        <Route path='cart' element={<Cart />}/>
+      </Routes>
+    </div>
   );
 }
 

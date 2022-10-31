@@ -13,7 +13,7 @@ export const cartSlice = createSlice({
         if(itemIndex >= 0){
           state.value[itemIndex] = {
             ...state.value[itemIndex],
-            name: action.payload.updated_name
+            name: action.payload.updated_value
           }
         }
       },
@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
         if(itemIndex >= 0){
           state.value[itemIndex] = {
             ...state.value[itemIndex],
-            price: action.payload.updated_price
+            price: action.payload.updated_value
           }
         }
       },

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import './Total.scss'
 
 export default function Total(){
     const cart = useSelector((state) => state.cart.value);
@@ -13,7 +14,9 @@ export default function Total(){
     }
 
     return(
-        <p>Total: ${getTotal()}</p>
+        <p id='total'>
+            <span>Total: </span>${getTotal()}
+        </p>
     )
 
 }
