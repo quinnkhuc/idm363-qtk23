@@ -14,7 +14,7 @@ export const productSlice = createSlice({
 
         state.value[itemIndex] = {
           ...state.value[itemIndex],
-          name: action.payload.updated_name
+          name: action.payload.updated_value
         }
       },
       update_product_price: (state, action) => {
@@ -22,7 +22,7 @@ export const productSlice = createSlice({
 
         state.value[itemIndex] = {
           ...state.value[itemIndex],
-          price: action.payload.updated_price
+          price: action.payload.updated_value
         }
       }
     }
