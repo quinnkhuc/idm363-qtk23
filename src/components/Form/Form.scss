@@ -21,37 +21,44 @@
     }
 }
 
-form{
+.form{
     background-color: $primary-yellow;
     border: 2px solid $primary-green;
     border-radius: 10px;
     padding: 1rem 0;
+    margin-bottom: 1rem;
 
-    div{
-        margin: 0 auto;
-        width: fit-content;
-
-        input{
-            border: 1px solid $primary-green;
-            border-radius: 5px;
-            color: $primary-green;
-            font-size: 1.2rem;
-            height: 2rem;
-            padding: 0.5rem;
-        }
+    button{
+        margin-top: 1rem;
     }
 
-    .name{
-        input{
-            font-family: $rufina;
-            font-weight: 700;
+    form{    
+        div{
+            margin: 0 auto;
+            width: fit-content;
+    
+            input{
+                border: 1px solid $primary-green;
+                border-radius: 5px;
+                color: $primary-green;
+                font-size: 1.2rem;
+                height: 2rem;
+                padding: 0.5rem;
+            }
         }
-    }
-
-    .price{
-        input{
-            font-family: $pt-serif;
-            margin-top: 0.5rem;
+    
+        .name{
+            input{
+                font-family: $rufina;
+                font-weight: 700;
+            }
+        }
+    
+        .price{
+            input{
+                font-family: $pt-serif;
+                margin-top: 0.5rem;
+            }
         }
     }
 }

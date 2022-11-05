@@ -7,23 +7,14 @@ export const cartSlice = createSlice({
       value: []
     },
     reducers: {
-      update_cart_item_name: (state, action) => {
+      update_cart_item: (state, action) => {
         const itemIndex = state.value.findIndex(item => item.id === action.payload.id)
 
         if(itemIndex >= 0){
           state.value[itemIndex] = {
             ...state.value[itemIndex],
-            name: action.payload.updated_value
-          }
-        }
-      },
-      update_cart_item_price: (state, action) => {
-        const itemIndex = state.value.findIndex(item => item.id === action.payload.id)
-
-        if(itemIndex >= 0){
-          state.value[itemIndex] = {
-            ...state.value[itemIndex],
-            price: action.payload.updated_value
+            name: action.payload.name,
+            price: action.payload.price
           }
         }
       },
@@ -43,6 +34,6 @@ export const cartSlice = createSlice({
     },
 });
   
-export const { update_cart_item_name, update_cart_item_price, add_to_cart, remove_from_cart } = cartSlice.actions;
+export const { update_cart_item, add_to_cart, remove_from_cart } = cartSlice.actions;
   
 export default cartSlice.reducer;

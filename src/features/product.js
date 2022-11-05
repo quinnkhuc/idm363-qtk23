@@ -9,25 +9,18 @@ export const productSlice = createSlice({
       initialize_store: (state, action) => {
         state.value = action.payload
       },
-      update_product_name: (state, action) => {
+      update_product: (state, action) => {
         const itemIndex = state.value.findIndex((item) => item.id === action.payload.id)
 
         state.value[itemIndex] = {
           ...state.value[itemIndex],
-          name: action.payload.updated_value
-        }
-      },
-      update_product_price: (state, action) => {
-        const itemIndex = state.value.findIndex((item) => item.id === action.payload.id)
-
-        state.value[itemIndex] = {
-          ...state.value[itemIndex],
-          price: action.payload.updated_value
+          name: action.payload.name,
+          price: action.payload.price
         }
       }
     }
 });
   
-export const { initialize_store, update_product_name, update_product_price } = productSlice.actions;
+export const { initialize_store, update_product } = productSlice.actions;
   
 export default productSlice.reducer;
