@@ -19,8 +19,8 @@ function ProductCard({id, name, price, imgURL}){
             <Link to={`/product/${id}`}>
                 <img src={imgURL} alt={name + ' Image'}></img>
                 <p className='name'>{name}</p>
-                <p className='price'>${price}</p>
             </Link>
+            <p className='price'>${price}</p>
             <button onClick={() => addToCart(id, name, price)}>Add to Cart</button>
         </div>
     )
