@@ -35,14 +35,18 @@ function Form({id, name, price}){
     }
 
     async function updateFirestore(id, name, price){
+        if(price === ''){
+            price = 0;
+        }
+
         const docRef = doc(db, 'products', id);
         const docSnap = await getDoc(docRef);
-        const docData = docSnap.data();
+        const docData = docSnap.data()
 
         setDoc(docRef, {
             ...docData,
-            name: inventory.name,
-            price: inventory.price
+            name: name,
+            price: price
         })
 
         dispatch(update_cart_item({id, name, price}));
