@@ -37,7 +37,7 @@ function Form({id, name, price}){
     async function updateFirestore(id, name, price){
         const docRef = doc(db, 'products', id);
         const docSnap = await getDoc(docRef);
-        const docData = docSnap.data()
+        const docData = docSnap.data();
 
         setDoc(docRef, {
             ...docData,

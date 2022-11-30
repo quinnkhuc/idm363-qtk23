@@ -1,0 +1,78 @@
+@import '../../utilities/variables';
+
+#product{
+    .description{
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    img{
+        display: block;
+        margin: 0 auto;
+        width: 80vw;
+    }
+
+    .name{
+        font-family: $rufina;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .price{
+        font-family: $rufina;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media(min-width: $tablet){
+    #product{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 'content img';
+        gap: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+
+        div{
+            align-self: center;
+            grid-area: content;
+            margin: 0 auto;
+
+            button{
+                margin: 0;
+            }
+
+            .description{
+                margin-bottom: 1.5rem;
+                margin-top: 1rem;
+            }
+
+            .name{
+                text-align: left;
+            }
+
+            .price{
+                margin-top: 1rem;
+                text-align: left;
+            }
+        }
+
+        img{
+            grid-area: img;
+            width: 100%;
+        }
+    }
+}
+
+@media(min-width: $destop){
+    #product{
+        width: 80%;
+    }
+}

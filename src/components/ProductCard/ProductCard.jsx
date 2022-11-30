@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { add_to_cart } from '../../features/cart';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 import './ProductCard.scss';
 
@@ -15,9 +16,11 @@ function ProductCard({id, name, price, imgURL}){
 
     return(
         <div className='product'>
-            <img src={imgURL} alt={name + ' Image'}></img>
-            <p className='name'>{name}</p>
-            <p className='price'>${price}</p>
+            <Link to={`/product/${id}`}>
+                <img src={imgURL} alt={name + ' Image'}></img>
+                <p className='name'>{name}</p>
+                <p className='price'>${price}</p>
+            </Link>
             <button onClick={() => addToCart(id, name, price)}>Add to Cart</button>
         </div>
     )

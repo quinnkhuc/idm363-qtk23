@@ -10,6 +10,7 @@ import { initialize_store } from './features/product';
 import Admin from './routes/admin';
 import Cart from './routes/cart';
 import Home from './routes/home';
+import Product from './routes/product';
 
 
 import './App.scss';
@@ -40,8 +41,9 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='admin' element={<Admin />}/>
-        <Route path='cart' element={<Cart />}/>
+        <Route path='/product/:productId' element={<Product />} />
+        <Route path='/admin' element={<Admin />}/>
+        <Route path='/cart' element={<Cart />}/>
       </Routes>
     </div>
   );
