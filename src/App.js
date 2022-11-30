@@ -11,6 +11,7 @@ import Admin from './routes/admin';
 import Cart from './routes/cart';
 import Home from './routes/home';
 import Product from './routes/product';
+import NotFound from './routes/notFound';
 
 
 import './App.scss';
@@ -44,6 +45,7 @@ function App() {
         <Route path='/product/:productId' element={<Product />} />
         <Route path='/admin' element={<Admin />}/>
         <Route path='/cart' element={<Cart />}/>
+        <Route path='*' element={<NotFound />}/>
       </Routes>
     </div>
   );
