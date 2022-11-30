@@ -35,8 +35,8 @@ function Form({id, name, price}){
     }
 
     async function updateFirestore(id, name, price){
-        if(price === ''){
-            price = 0;
+        if(price === '' || price <= 0){
+            price = 1;
         }
 
         const docRef = doc(db, 'products', id);
